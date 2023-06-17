@@ -16,6 +16,9 @@
     "make:linux_arm64": "electron-forge make --arch=arm64 --platform=linux",
     "make:darwin": "npm run make:darwin_arm64 && npm run make:darwin_x64",
     "make:linux": "npm run make:linux_arm64 && npm run make:linux_x64",
+    "make:current_x64": "electron-forge make --arch=x64",
+    "make:current_arm64": "electron-forge make --arch=arm64",
+    "make:current": "npm run make:current_x64 && npm run make:current_arm64",
     "make": "npm run build && npm run make:darwin"
   },
   "keywords": [],

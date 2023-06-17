@@ -31,7 +31,7 @@ jobs:
         if: runner.os == 'Windows'
         uses: actions/upload-artifact@v3
         with:
-          name: leafbox-windows-${{ github.event.repository.updated_at}}
+          name: leafbox-windows
           path: |
             desktop/out/make/**/*.exe
             desktop/out/make/**/*.zip
@@ -40,7 +40,7 @@ jobs:
         if: runner.os == 'Linux'
         uses: actions/upload-artifact@v3
         with:
-          name: leafbox-linux-${{ github.event.repository.updated_at}}
+          name: leafbox-linux
           path: |
             desktop/out/make/**/*.rpm
             desktop/out/make/**/*.deb
@@ -50,7 +50,7 @@ jobs:
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v3
         with:
-          name: leafbox-macos-${{ github.event.repository.updated_at}}
+          name: leafbox-macos
           path: |
             desktop/out/make/**/*.dmg
         

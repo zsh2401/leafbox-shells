@@ -23,4 +23,5 @@ jobs:
         working-directory: ./desktop
         run: |
           npm install
+          npm run build
           npm run make:current

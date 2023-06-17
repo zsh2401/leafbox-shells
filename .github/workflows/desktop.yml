@@ -21,6 +21,6 @@ jobs:
 
       - name: Build Desktop App on current platform
         working-directory: ./desktop
-        run:
-        - npm install
-        - npm run make:current
+        run: |
+          npm install
+          npm run make:current

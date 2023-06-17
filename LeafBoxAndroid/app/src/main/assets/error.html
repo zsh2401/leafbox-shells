@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Leaf Box错误</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        #wrapper {
+            /* background: red; */
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #inner {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        #app-icon {
+            height: 120px;
+            border: 1px solid gainsboro;
+            border-radius: 15px;
+            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="inner">
+            <div id="content">
+                <img id="app-icon" src="./leafbox.png">
+                <h2>Leaf Box</h2>
+                <br />
+                <h4>网络似乎出现了问题？</h4>
+                <p>点击任意位置重试</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.addEventListener("click", () => {
+            leafboxNativeBridge.retry()
+        })
+    </script>
+</body>
+
+</html>

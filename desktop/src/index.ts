@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut } from "electron"
+import { app, BrowserWindow, globalShortcut, shell } from "electron"
 import path from "path"
 import { configureMenu } from "./configureMenu"
 import { platform } from "os"
@@ -24,6 +24,24 @@ const createWindow = (): BrowserWindow => {
             win.hide()
         }
     })
+   
+    win.webContents.on('will-navigate', function(event, url) {
+        // const isLeafBox
+        // is not leafbox website
+        // is leafbox website but url contains download
+        // console.log(url)
+        if (!url.includes("ai.zsh2401.top") || url.includes("download")) {
+            event.preventDefault();
+            shell.openExternal(url);
+        }
+    });
+    
+
+    // Open external URL with os default browser.
+    win.webContents.setWindowOpenHandler(({ url }) => {
+        shell.openExternal(url);
+        return { action: 'deny' };
+    });
 
     if (process.env.ELE_DEV) {
         console.log("loading local app")

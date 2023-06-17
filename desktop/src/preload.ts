@@ -1,5 +1,4 @@
 import os from 'os'
-import type { ClientBridge } from '@leafbox/common'
 import { contextBridge } from 'electron'
 
 const bridgeImpl: ClientBridge = {

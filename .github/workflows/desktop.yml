@@ -26,7 +26,31 @@ jobs:
           npm run build
           npm run make:current
 
-      - uses: actions/upload-artifact@v3
+
+      - name: Upload Windows Artifacts
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v3
         with:
-          name: artifacts
-          path: desktop/out/make
+          name: leafbox-windows-${{ github.event.repository.updated_at}}
+          path: |
+            desktop/out/make/**/*.exe
+            desktop/out/make/**/*.zip
+
+      - name: Upload Linux Artifacts
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v3
+        with:
+          name: leafbox-linux-${{ github.event.repository.updated_at}}
+          path: |
+            desktop/out/make/**/*.rpm
+            desktop/out/make/**/*.deb
+            desktop/out/make/**/*.zip
+
+      - name: Upload macOS Artifacts
+        if: runner.os == 'macOS'
+        uses: actions/upload-artifact@v3
+        with:
+          name: leafbox-macos-${{ github.event.repository.updated_at}}
+          path: |
+            desktop/out/make/**/*.dmg
+        

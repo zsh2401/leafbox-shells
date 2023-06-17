@@ -1,7 +1,7 @@
 import os from 'os'
 import { contextBridge } from 'electron'
 
-const bridgeImpl: ClientBridge = {
+const bridgeImpl = {
 
     getVersionCode: function (): number {
         return 1

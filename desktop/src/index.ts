@@ -35,6 +35,7 @@ const createWindow = (): BrowserWindow => {
 }
 (async () => {
 
+    app.setName("Leaf Box")
     app.on('window-all-closed', () => {
         if (process.platform !== 'darwin') {
             app.quit()

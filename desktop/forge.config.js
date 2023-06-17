@@ -1,7 +1,9 @@
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon:"./icons/leafbox",
+    name: "Leaf Box",
+    executableName: 'Leaf Box Desktop',
+    icon: "./icons/leafbox",
   },
   rebuildConfig: {},
   makers: [

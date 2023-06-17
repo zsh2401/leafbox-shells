@@ -25,3 +25,8 @@ jobs:
           npm install
           npm run build
           npm run make:current
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: desktop/out/make

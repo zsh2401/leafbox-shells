@@ -1,5 +1,5 @@
 {
-  "name": "Leaf Box",
+  "name": "leaf-box",
   "version": "1.0.0",
   "description": "Next generation AI tools.",
   "main": "dist/index.js",
